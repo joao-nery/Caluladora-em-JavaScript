@@ -1,0 +1,94 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html, body{
+    height: 100%;
+    background-color: #606060;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-Calc{
+    background-color: #242323;
+    width: 341px;
+    height: 574px;
+    border-radius: 10px;
+    box-shadow: 0px 10px 10px 5px rgba(0, 0, 0, 0.39);
+    display: flex;
+    flex-direction: column;
+}
+
+.box-display{
+    height: 206px;
+    margin-bottom: 20px;
+}
+
+.box-display > .text-input{
+    margin: 0;
+    position: relative;
+    font-size: 54px;
+    text-align: right;
+    color: white;
+    overflow: hidden;
+    margin: 10px;
+    height: 100px;
+    padding-right: 10px;
+}
+
+.box-display > .icon{
+    color: #a9a9a9;
+    font-size: 1.3em;
+    text-align: right;
+    padding: 30px 25px 0px 0px;
+    height: 60px;
+}
+
+.box-btns{
+    height: 335.6px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.box-btns > .btn, .btn-Number, .btn-Sum, .btn-Clear{
+    height: 63.6px;
+    width: 78.09px;
+    border-radius: 5px;
+    background-color: #333131;
+    border: none;
+    color: white;
+    font-size: 24px;
+    font-weight: 350;
+}
+
+.btn-Number{
+    background-color: #433F3F;
+}
+
+.btn-Sum{
+    background-color: #F1A46D;
+    color: black;
+}
+
+.btn-Clear{
+    color: #FFCA8E;
+}
+
+/*Hovers*/
+
+.btn:hover, .btn-Clear:hover{
+    background-color: #2a2727;
+}
+
+.btn-Number:hover{
+    background-color: #3a3535;
+}
+
+.btn-Sum:hover{
+    background-color: #e49258
+}
