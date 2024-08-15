@@ -1,4 +1,3 @@
-============================
 Esta é uma Calculadora em JS.
 
 - Está finalizada! 
