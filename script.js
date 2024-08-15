@@ -7,11 +7,14 @@ const btnSum = document.querySelector('#sum');
 const floorBtn = document.querySelector('#floor');
 const iconDisplay = document.querySelector('.icon');
 const plusAndMinus = document.querySelector('#plusAndMinus');
-
+const porcent = document.querySelector('#porcent');
 
 // Variáveis globais
 let operadorAtual = '';
 let operandoAtual = '';
+let isTrue = true;
+const stringMinus = '-';
+const stringfloor = '.';
 
 
 numberBtns.forEach((el) => el.addEventListener('click', (evt) => {
@@ -71,31 +74,38 @@ btnSum.addEventListener('click', () => {
     
 })
 
-floorBtn.addEventListener('click', (evt) => {
+porcent.addEventListener('click', (evt) => {
+    let secondNumber = inputText.innerHTML;
+
+
     if(evt.target){
-        let floor = '.';
-        let newString = inputText.innerHTML + floor;
-        inputText.innerHTML = newString;
-        if(newString.includes('..')){
-            inputText.innerHTML = '0';
-        }
+        inputText.innerHTML = (secondNumber / 100) * operandoAtual;
+        iconDisplay.innerHTML = '';
     }
 })
 
-let isTrue = true
-
-const stringMinus = '-';
-
-
-plusAndMinus.addEventListener('click', (evt) => {
+floorBtn.addEventListener('click', () => {
     operandoAtual = inputText.innerHTML;
 
     if(isTrue){
-        inputText.innerHTML = stringMinus + operandoAtual;
+        inputText.innerHTML = operandoAtual.concat(stringfloor);
     }else{
-        inputText.innerHTML = operandoAtual;
+        if(operandoAtual.includes('.')){
+            inputText.innerHTML = operandoAtual.slice(0, inputText.innerHTML.length -1)
+        };
+    }
+
+    isTrue = !isTrue
+})
+
+plusAndMinus.addEventListener('click', () => {
+    operandoAtual = inputText.innerHTML;
+
+    if(isTrue){
+        inputText.innerHTML = stringMinus.concat(operandoAtual);
+    }else{
         if(operandoAtual.includes('-')){
-            
+            inputText.innerHTML = operandoAtual.slice(1)
         }
     }
 
